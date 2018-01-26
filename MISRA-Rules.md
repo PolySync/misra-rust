@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [8.1 A Standard C Environment](#81-a-standard-c-environment)
   - [Rule 1.1](#rule-11)
   - [Rule 1.2](#rule-12)
@@ -119,7 +120,7 @@
   - [Rule 17.6](#rule-176)
   - [Rule 17.7](#rule-177)
   - [Rule 17.8](#rule-178)
-- [8.18 Functions](#818-functions)
+- [8.18 Pointers and arrays](#818-pointers-and-arrays)
   - [Rule 18.1](#rule-181)
   - [Rule 18.2](#rule-182)
   - [Rule 18.3](#rule-183)
@@ -1031,7 +1032,7 @@ __[See Rule_17_8.rs](./src/Rule_17_8.rs)__
 
 _This is not strictly enforceable in Rust._
 
-## 8.18 Functions
+## 8.18 Pointers and arrays
 
 ### Rule 18.1
 
