@@ -6,6 +6,6 @@ fn main() {
     match i {
         0 => {},
         _ => {},
-        1 => {},
+        1 => {}, //~ ERROR unreachable pattern
     }
 }

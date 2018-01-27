@@ -3,6 +3,6 @@
 
 fn main() {
     let u8a: u8 = 1;
-    let u8b: u8 = u8a << 8;
-    println!("{}", u8b);
+    let _: u8 = u8a << 8;
+    //~^ ERROR bitshift exceeds the type's number of bits
 }

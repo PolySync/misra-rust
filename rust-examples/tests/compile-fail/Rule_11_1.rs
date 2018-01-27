@@ -6,6 +6,5 @@ fn add_one(x: i32) -> i32 {
 }
 
 fn main() {
-    let x: u32 = add_one as u32;
-    println!("{}", x);
+    let _: u32 = add_one as u32;
 }

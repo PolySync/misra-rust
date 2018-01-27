@@ -12,6 +12,5 @@ fn add( x: u8, y: u8 ) -> u8 {
 
 fn main() {
     let mut x: u8 = 0;
-    // println!("{:?}", add(x, *increment(&mut x))); // different result!
-    println!("{:?}", add(*increment(&mut x), x));
+    let _ = add(*increment(&mut x), x);
 }

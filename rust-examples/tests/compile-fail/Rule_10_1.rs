@@ -2,6 +2,6 @@
 #[deny(warnings)]
 
 fn main() {
-    let s1 = "\x41g";
-    let _ = s1; // "Ag"
+    let x: i32 = 0xFF;
+    let _ = x << 2;
 }

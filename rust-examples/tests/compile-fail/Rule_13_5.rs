@@ -10,6 +10,6 @@ fn main() {
     let mut x: bool = true;
 
     if *not(&mut x) || *not(&mut x) {
-        println!("{}", x);
+        //
     }
 }

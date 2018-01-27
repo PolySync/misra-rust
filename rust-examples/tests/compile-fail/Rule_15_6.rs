@@ -2,9 +2,7 @@
 #[deny(warnings)]
 
 fn main() {
-
-    let x = 1;
-
     loop
-        x += 1;
+        let _ = 1;
+        //~^ ERROR expected `{`, found `let`
 }

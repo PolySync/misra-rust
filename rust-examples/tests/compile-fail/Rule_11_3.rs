@@ -13,8 +13,8 @@ struct TypeB {
 
 fn main() {
     let ta = TypeA { f: 3.14 };
-    let tb1: TypeB = ta as TypeB; // error
-    let tb2: TypeB = From::from(ta); // error
-
-    println!("{:?} -- {:?}", tb1, tb2);
+    let tb1: TypeB = ta as TypeB;
+    //~^ ERROR non-primitive cast: `TypeA` as `TypeB`
+    let tb2: TypeB = From::from(ta);
+    //~^ ERROR the trait bound `TypeB: std::convert::From<TypeA>` is not satisfied
 }
