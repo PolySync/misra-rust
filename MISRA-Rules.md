@@ -1,6 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+
 - [8.1 A Standard C Environment](#81-a-standard-c-environment)
   - [Rule 1.1](#rule-11)
   - [Rule 1.2](#rule-12)
@@ -119,7 +120,7 @@
   - [Rule 17.6](#rule-176)
   - [Rule 17.7](#rule-177)
   - [Rule 17.8](#rule-178)
-- [8.18 Functions](#818-functions)
+- [8.18 Pointers and arrays](#818-pointers-and-arrays)
   - [Rule 18.1](#rule-181)
   - [Rule 18.2](#rule-182)
   - [Rule 18.3](#rule-183)
@@ -403,7 +404,7 @@ __[See Rule_7_2.rs](./src/Rule_7_2.rs)__
 
 "The lowercase 'l' shall not be used in a literal suffix."
 
-_This rule is not strictly enforcable in Rust, there is no 'L' or 'l' suffix._
+_No direct corollary in Rust._
 
 ### Rule 7.4
 
@@ -422,80 +423,68 @@ __[See Rule_7_4.rs](./src/Rule_7_4.rs)__
 
 "Types shall be explicitly specified."
 
-_This rule is not strictly enforcable in Rust as types can be inferred after_
-_declaration. It's kind of a non-issue as it's not possible to "mix" types,_
-_i.e, if a variable is used as a `u8` it cannot later be used as a `char`_
-_without being explicit._
+_No direct corollary in Rust._
 
 ### Rule 8.2
 
 "Function types shall be in prototype form with named parameters."
 
-_This rule is not strictly enforcable in Rust, there is no concept of the_
-_function prototype._
+_No direct corollary in Rust._
 
 ### Rule 8.3
 
 "All declarations of an object or function shall use the same names and type
 qualifiers."
 
-_This rule is not strictly enforcable in Rust, there is no concept of the_
-_function prototype._
+_No direct corollary in Rust._
 
 ### Rule 8.4
 
 "A compatible declaration shall be visible when an object or function with
 external linkage is defined."
 
-_This rule is not strictly enforcable in Rust, there is no concept of the_
-_forward declaration An external object it may be identified with a 'use'_
-_declaration as well as a less explicict wildcard._
+_No direct corollary in Rust._
 
 ### Rule 8.5
 
 "An external object or function shall be declared once in one and only one
 file."
 
-_This rule is not strictly enforcable in Rust, shadowing is allowed, objects_
-_and functions are scoped. There can be no more than one declaration per scope._
+_No direct corollary in Rust._
 
 ### Rule 8.6
 
 "An identifier with external linkage shall have exactly one external
 definition."
 
-_This rule is not strictly enforcable in Rust, shadowing is allowed, objects_
-_and functions are scoped. There can be no more than one definition per scope._
+_No direct corollary in Rust._
 
 ### Rule 8.7
 
 "Functions and objects should not be defined with external linkage if they
 are referenced in only one translation unit."
 
-_This rule is not strictly enforcable in Rust libraries though external_
-_visibility in Rust requires explicit "opt-in" with the `pub` keyword._
+_No direct corollary in Rust._
 
 ### Rule 8.8
 
 "The static storage class specifier shall be used in all declarations of objects
 and functions that have internal linkage."
 
-_This rule is not strictly enforcable in Rust though external visibility in_
-_Rust requires explicit "opt-in" with the `pub` keyword rather than the C_
-_"out-out" requirement that may me more easily misused._
+_No direct corollary in Rust._
 
 ### Rule 8.9
 
 "An object should be defined at block scope if its identifier only appears in
 a single function." (Don't use globals if a local variable will work instead.)
 
-_This rule is not strictly enforcable in Rust._
+_No direct corollary in Rust._
 
 ### Rule 8.10
 
 "An _inline_ function shall be declared with the static storage class."
 
-_This rule is not strictly enforcable in Rust._
+_No direct corollary in Rust._
 
 ### Rule 8.11
 
@@ -519,10 +508,7 @@ __[See Rule_8_12.rs](./src/Rule_8_12.rs)__
 
 "A pointer should point to a const-qualified type whenever possible."
 
-_Const is default in Rust, mutability is "opt-in". If a type isn't used_
-_mutably, declaring it as so can be prevented at compile time._
-
-_Enforceable in Rust._
+_This is not strictly enforceable in Rust._
 
 __[See Rule_8_13.rs](./src/Rule_8_13.rs)__
 
@@ -582,6 +568,8 @@ __[See Rule_9_5.rs](./src/Rule_9_5.rs)__
 
 _This is not strictly enforceable in Rust. For instance bitwise operations_
 _on signed integers are allowed._
+
+__[See Rule_10_1.rs](./src/Rule_10_1.rs)__
 
 ### Rule 10.2
 
@@ -643,7 +631,7 @@ __[See Rule_10_7.rs](./src/Rule_10_7.rs)__
 "The value of a composite expression shall not be cast to a different essential
 type category or a wider essential type."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_10_8.rs](./src/Rule_10_8.rs)__
 
@@ -673,7 +661,7 @@ __[See Rule_11_2.rs](./src/Rule_11_2.rs)__
 to different object type."
 
 _You may define the `From` trait to facilitate this behavior but by default,_
-_this behavior is not allowed for custom types_
+_this behavior is not allowed for custom types._
 
 _Enforceable in Rust._
 
@@ -725,7 +713,7 @@ __[See Rule_11_8.rs](./src/Rule_11_8.rs)__
 "The macro NULL shall be the only permitted form of integer null pointer
 constant."
 
-_No direct corollary in safe Rust_
+_No direct corollary in Rust._
 
 ## 8.12 Expressions
 
@@ -734,6 +722,8 @@ _No direct corollary in safe Rust_
 "The precedence of operators within expressions should be made explicit"
 
 _This is not strictly enforceable in Rust._
+
+__[See Rule_12_1.rs](./src/Rule_12_1.rs)__
 
 ### Rule 12.2
 
@@ -748,7 +738,7 @@ __[See Rule_12_2.rs](./src/Rule_12_2.rs)__
 
 "The comma operator should not be used."
 
-_This is not strictly enforceable in Rust._
+_No direct corollary in Rust._
 
 ### Rule 12.4
 
@@ -825,7 +815,7 @@ __[See Rule_14_1.rs](./src/Rule_14_1.rs)__
 
 "A _for_ loop shall be well-formed."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_14_2.rs](./src/Rule_14_2.rs)__
 
@@ -852,7 +842,7 @@ __[See Rule_14_4.rs](./src/Rule_14_4.rs)__
 
 "The _goto_ statement shall not be used."
 
-_This is not strictly enforceable in Rust._
+_Assuming loop labels are equivalent, this is not strictly enforceable in Rust._
 
 __[See Rule_15_1.rs](./src/Rule_15_1.rs)__
 
@@ -870,7 +860,7 @@ __[See Rule_15_2.rs](./src/Rule_15_2.rs)__
 "Any label referenced by a _goto_ statement shall be declared in the same block,
 or in any block enclosing the goto statement."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_15_3.rs](./src/Rule_15_3.rs)__
 
@@ -932,7 +922,7 @@ __[See Rule_16_2.rs](./src/Rule_16_2.rs)__
 
 "An unconditional _break_ statement shall terminate every _switch-clause_."
 
-_No direct corollary in Rust. There's no real concept of the 'fall through'._
+_No direct corollary in Rust._
 
 ### Rule 16.4
 
@@ -963,7 +953,7 @@ __[See Rule_16_6.rs](./src/Rule_16_6.rs)__
 
 "A _switch-expression_ shall not have _essentially Boolean type_."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_16_7.rs](./src/Rule_16_7.rs)__
 
@@ -1031,7 +1021,7 @@ __[See Rule_17_8.rs](./src/Rule_17_8.rs)__
 
 _This is not strictly enforceable in Rust._
 
-## 8.18 Functions
+## 8.18 Pointers and arrays
 
 ### Rule 18.1
 
