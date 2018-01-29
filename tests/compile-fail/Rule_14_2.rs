@@ -10,4 +10,3 @@ fn main() {
         //~^ ERROR attempt to mutate range bound within loop; note that the range of the loop is unchanged
     }
 }
-

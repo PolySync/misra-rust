@@ -172,6 +172,7 @@
 
 
 ## 8.1 A Standard C Environment
+
 ### Rule 1.1
 
 "The program shall contain no violations of the standard C syntax and

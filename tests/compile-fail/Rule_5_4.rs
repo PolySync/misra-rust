@@ -10,10 +10,6 @@ macro_rules! engine_exhaust_gas_temperature_scaled {
 }
 
 fn main() {
-    println!(
-        "This program uses macro identifiers that are not MISRA-C \
-        distinct. {} -- {}",
-        engine_exhaust_gas_temperature_raw!(),
-        engine_exhaust_gas_temperature_scaled!());
-
+    let _ = engine_exhaust_gas_temperature_raw!();
+    let _ = engine_exhaust_gas_temperature_scaled!();
 }
