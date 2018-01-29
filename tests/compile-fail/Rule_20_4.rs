@@ -2,9 +2,9 @@
 #[deny(warnings)]
 
 macro_rules! while { //~ ERROR expected identifier, found keyword `while`
+//~^ ERROR unused macro definition
    () => (3;);
 }
-//~^ ERROR unused macro definition
 
 fn main() {
     let _ = while!();
