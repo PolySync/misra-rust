@@ -1,0 +1,22 @@
+#![deny(clippy)]
+#[deny(warnings)]
+
+fn return_v1(depth: u64) ->  u64 {
+    if depth == 2 {
+        return depth
+    }
+    //~^ ERROR if may be missing an else clause
+}
+
+fn return_v2(depth: u64) ->  u64 {
+    if depth == 2 {
+        return //~ ERROR `return;` in a function whose return type is not `()`
+    }
+
+    depth
+}
+
+fn main() {
+    return_v1(0);
+    return_v2(0);
+}
