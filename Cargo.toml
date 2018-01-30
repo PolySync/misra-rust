@@ -3,5 +3,8 @@ name = "misra-rust"
 version = "0.1.0"
 authors = ["Shea Newton <snewton@polysync.io>"]
 
+[dependencies.clippy]
+version = "=0.0.180"
+
 [dev-dependencies.compiletest_rs]
 version = "=0.3.5"
