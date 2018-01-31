@@ -1,6 +1,8 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 /// This struct definition preceeds the `use` statement.
 struct MyStruct {
@@ -14,6 +16,7 @@ fn func(_: MyStruct) {
 }
 
 use std::fmt;
+//~ ERROR Non-compliant - `include` directive preceeded by something other than macros or comments
 
 impl fmt::Display for MyStruct {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

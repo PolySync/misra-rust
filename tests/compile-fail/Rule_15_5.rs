@@ -1,6 +1,8 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 fn main() {
 
@@ -12,5 +14,6 @@ fn main() {
 
     if x < 1 {
         return;
+        //~^ ERROR Non-compliant - more than one exit point from function
     }
 }

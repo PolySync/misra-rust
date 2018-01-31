@@ -1,8 +1,4 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
 
-fn main() {
-#[cfg(custom_check = 10)]
-    println!("The above is legal.");
-}
+"N/A"
+//~^ ERROR expected item, found `"N/A"`

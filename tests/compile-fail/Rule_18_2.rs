@@ -1,6 +1,8 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 fn main() {
     let a1: [i32; 10] = [0;10];

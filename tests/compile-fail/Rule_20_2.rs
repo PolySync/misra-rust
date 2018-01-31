@@ -1,4 +1,6 @@
-#[forbid(clippy_pedantic)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
 include!("../../include/_'_.rs");
 //~ ERROR invalid character `'` in crate name: `Rule_20_2_'`
 

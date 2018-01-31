@@ -1,6 +1,8 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 fn main() {
     let x: u16; //~ ERROR variable `x` is assigned to, but never used

@@ -1,6 +1,8 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 fn return_v1(depth: u64) ->  u64 {
     if depth == 2 { //~ ERROR if may be missing an else clause

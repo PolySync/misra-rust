@@ -1,9 +1,11 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 fn main() {
     let mut x: Box<u8> = Box::new(8);
-
-    *x += 1;
+    //~^ ERROR variable does not need to be mutable
+    let _ = *x;
 }

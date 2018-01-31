@@ -1,11 +1,14 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 /// This function modifes its parameter.
 fn paramod(mut para: u16) -> u16 {
-    para += 1;
-    para
+    para += 1; //~ ERROR parameter modified without persistent effect
+    let _ = para;
+    1
 }
 
 fn main() {

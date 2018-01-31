@@ -1,18 +1,20 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
 
-macro_rules! print_it {
-   ($e:expr) => (println!("{:?}", $e));
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
+
+macro_rules! double_it {
+   ($e:expr) => ($e * $e);
 }
 
 fn main() {
-    print_it!(
-        if cfg!(feature = "hi") {
-            "hi"
-        } else {
-            "hello"
-        }
-    );
+    let _ = double_it!(
+        #[cfg(feature = 10)]
+        10
+        #[cfg(feature = 100)]
+        //~^ ERROR no rules expected the token `#`
+        100
+        );
 }
 

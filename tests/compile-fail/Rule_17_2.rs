@@ -1,6 +1,8 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
 
 /// This function employs recursion.
 fn recursive(depth: u64) {
@@ -9,6 +11,7 @@ fn recursive(depth: u64) {
     }
 
     recursive(depth + 1);
+    //~^ ERROR Non-compliant - function calls itself
 }
 
 fn main() {

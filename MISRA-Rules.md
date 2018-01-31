@@ -333,9 +333,7 @@ __[See Rule_5_4.rs](./tests/compile-fail/Rule_5_4.rs)__
 
 "Identifiers shall be distinct from macro names."
 
-_This rule is not strictly enforcable in Rust but macros aren't mistakable as_
-_other identifiers in Rust in the same way because of the `!` character_
-_requirement. Shadowing is allowed._
+_Enforceable in Rust. All macros are denoted with the `!`._
 
 __[See Rule_5_5.rs](./tests/compile-fail/Rule_5_5.rs)__
 
@@ -399,8 +397,8 @@ __[See Rule_6_2.rs](./tests/compile-fail/Rule_6_2.rs)__
 
 "Octal constants shall not be used."
 
-_This rule is not strictly enforcable in Rust though octal constants are_
-_differentiatable from decimal constants because they require the `0o` prefix._
+_No direct corollary in Rust. Octal constants are distict from_
+_decimal constants because they require the `0o` prefix._
 
 __[See Rule_7_1.rs](./tests/compile-fail/Rule_7_1.rs)__
 
@@ -545,7 +543,7 @@ __[See Rule_8_12.rs](./tests/compile-fail/Rule_8_12.rs)__
 
 "A pointer should point to a const-qualified type whenever possible."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_8_13.rs](./tests/compile-fail/Rule_8_13.rs)__
 
@@ -683,7 +681,7 @@ __[See Rule_10_8.rs](./tests/compile-fail/Rule_10_8.rs)__
 "Conversions shall not be performed between a pointer to a function and any
 other type."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_11_1.rs](./tests/compile-fail/Rule_11_1.rs)__
 
@@ -895,7 +893,7 @@ __[See Rule_14_4.rs](./tests/compile-fail/Rule_14_4.rs)__
 
 "The _goto_ statement shall not be used."
 
-_Assuming loop labels are equivalent, this is not strictly enforceable in Rust._
+_No direct corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_1.rs](./tests/compile-fail/Rule_15_1.rs)__
 
@@ -904,7 +902,7 @@ __[See Rule_15_1.rs](./tests/compile-fail/Rule_15_1.rs)__
 "The _goto_ statement shall jump to a label declared later in the same
 function."
 
-_This is not strictly enforceable in Rust._
+_No direct corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_2.rs](./tests/compile-fail/Rule_15_2.rs)__
 
@@ -913,7 +911,7 @@ __[See Rule_15_2.rs](./tests/compile-fail/Rule_15_2.rs)__
 "Any label referenced by a _goto_ statement shall be declared in the same block,
 or in any block enclosing the goto statement."
 
-_Enforceable in Rust._
+_No direct corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_3.rs](./tests/compile-fail/Rule_15_3.rs)__
 
@@ -922,7 +920,7 @@ __[See Rule_15_3.rs](./tests/compile-fail/Rule_15_3.rs)__
 "There should be no more than one _break_ or _goto_ statement used to terminate
 any iteration statement."
 
-_This is not strictly enforceable in Rust._
+_No direct corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_4.rs](./tests/compile-fail/Rule_15_4.rs)__
 
@@ -945,7 +943,7 @@ __[See Rule_15_6.rs](./tests/compile-fail/Rule_15_6.rs)__
 
 ### Rule 15.7
 
-"All _if ... else_ statements shall be terminated with and _else_ statement."
+"All _if ... else if_ statements shall be terminated with and _else_ statement."
 
 _This is not strictly enforceable in Rust._
 
@@ -1109,7 +1107,8 @@ __[See Rule_18_2.rs](./tests/compile-fail/Rule_18_2.rs)__
 "The relational operators _>_, _>=_, _<_ and _<=_ shall not be applied to
 objects of pointer type except where they point to the same object."
 
-_This is not strictly enforceable in Rust._
+_No direct corollary in Rust. Rust's 'auto' dereference behavior_
+_means those operations aren't applied to the pointers or references._
 
 __[See Rule_18_3.rs](./tests/compile-fail/Rule_18_3.rs)__
 
@@ -1126,8 +1125,17 @@ __[See Rule_18_4.rs](./tests/compile-fail/Rule_18_4.rs)__
 
 "Declarations should contain no more thaan two levels of pointer nesting."
 
-_This is not strictly enforceable in Rust._
+_No direct corollary in Rust. Rust's 'auto' dereference behavior_
+_manages the dereferences so as not to "seriously impair the ability to_
+_understand"._
 
+  These things are the same:
+  ```rust
+  f.foo();
+  (&f).foo();
+  (&&f).foo();
+  (&&&&&&&&f).foo();
+  ```
 __[See Rule_18_5.rs](./tests/compile-fail/Rule_18_5.rs)__
 
 ### Rule 18.6
@@ -1223,7 +1231,7 @@ __[See Rule_20_5.rs](./tests/compile-fail/Rule_20_5.rs)__
 "Tokens that look like a preprocessing directive shall not occur within a macro
 argument."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_20_6.rs](./tests/compile-fail/Rule_20_6.rs)__
 
@@ -1241,8 +1249,8 @@ __[See Rule_20_7.rs](./tests/compile-fail/Rule_20_7.rs)__
 "The controlling expression of a _#if_ or _#elif_ preprocessing directive shall
 evaluate to 0 or 1"
 
-_This is not strictly enforceable in Rust, the cfg! macro allows for more_
-_sophistication._
+_No direct corollary in Rust. The cfg! macro allows for more_
+_sophistication without the undefined behavior._
 
 __[See Rule_20_8.rs](./tests/compile-fail/Rule_20_8.rs)__
 
@@ -1251,8 +1259,8 @@ __[See Rule_20_8.rs](./tests/compile-fail/Rule_20_8.rs)__
 "All identifiers used in the controlling expression of _#if_ or _#elif_
 preprocessing directives shall be _#define_'d before evaluation."
 
-_This is not strictly enforceable in Rust, the cfg! macro allows for more_
-_sophistication._
+_No direct corollary in Rust. The cfg! macro allows for more_
+_sophistication without the undefined behavior._
 
 __[See Rule_20_9.rs](./tests/compile-fail/Rule_20_9.rs)__
 

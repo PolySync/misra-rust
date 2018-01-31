@@ -1,10 +1,13 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
+
+#![forbid(clippy_pedantic)]
+#![forbid(clippy)]
+#![forbid(warnings)]
+
 
 fn main() {
-    let x = 1;
-    if x + 2 < 2 + 2 && x << 1 > 9 {
-        //
+    let x: usize = 1;
+    if x >= 2 << 2 + 1 as usize {
+    //~^ ERROR operator precedence can trip the unwary
     }
 }

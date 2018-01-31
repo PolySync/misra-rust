@@ -1,11 +1,4 @@
-#[forbid(clippy_pedantic)]
-#[forbid(clippy)]
-#[forbid(warnings)]
+//! Rule
 
-fn main() {
-    'L1: for x in 0..5 {
-        if x == 3 {
-            break 'L1;
-        }
-    }
-}
+"N/A"
+//~^ ERROR expected item, found `"N/A"`
