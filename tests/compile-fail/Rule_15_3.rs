@@ -1,5 +1,6 @@
-#![deny(clippy)]
-#[deny(warnings)]
+#[forbid(clippy_pedantic)]
+#[forbid(clippy)]
+#[forbid(warnings)]
 
 fn main() {
     'L1: for _ in 0..5 {

@@ -1,9 +1,10 @@
-#![deny(clippy)]
-#[deny(warnings)]
+#[forbid(clippy_pedantic)]
+#[forbid(clippy)]
+#[forbid(warnings)]
 
 fn main() {
-    let u16a: u16 = 1;
-    let u16b: u16 = 2;
-    let _: u32 = u16a + u16b;
+    let u16_a: u16 = 1;
+    let u16_b: u16 = 2;
+    let _: u32 = u16_a + u16_b;
     //~^ ERROR mismatched types
 }

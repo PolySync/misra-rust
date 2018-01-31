@@ -1,5 +1,6 @@
-#![deny(clippy)]
-#[deny(warnings)]
+#[forbid(clippy_pedantic)]
+#[forbid(clippy)]
+#[forbid(warnings)]
 
 fn return_v1(depth: u64) ->  u64 {
     if depth == 2 {

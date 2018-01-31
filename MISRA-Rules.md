@@ -276,12 +276,12 @@ __[See Rule_3_2.rs](./tests/compile-fail/Rule_3_2.rs)__
 
 ## 8.4 Character sets and lexical conventions
 
-### Rule 4.1 🗙
+### Rule 4.1 ✔
 
 "Octal and hexadecimal escape sequences shall be terminated."
 
-_This rule is not strictly enforcable in Rust though ambuguous escapes are not_
-_allowed. All ASCII and byte escapes require exactly 2 hexadecimal digits._
+_Escape sequences are terminated implicitly, ambuguous escapes are not allowed._
+_All ASCII and byte escapes require exactly 2 hexadecimal digits._
 
 __[See Rule_4_1.rs](./tests/compile-fail/Rule_4_1.rs)__
 

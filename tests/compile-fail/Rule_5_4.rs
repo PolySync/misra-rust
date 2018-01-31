@@ -1,5 +1,6 @@
-#![deny(clippy)]
-#[deny(warnings)]
+#[forbid(clippy_pedantic)]
+#[forbid(clippy)]
+#[forbid(warnings)]
 
 macro_rules! engine_exhaust_gas_temperature_raw {
    () => (3;);

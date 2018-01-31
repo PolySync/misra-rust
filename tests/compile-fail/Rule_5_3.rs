@@ -1,11 +1,12 @@
-#![deny(clippy)]
-#[deny(warnings)]
+#[forbid(clippy_pedantic)]
+#[forbid(clippy)]
+#[forbid(warnings)]
 
 fn main() {
     let i: i16 = 1;
     if true {
-        let i: i16 = 0;
-        println!("{}", i);
+        let i: i16 = 0; //~ ERROR `i` is shadowed by `0`
+        let _ = i;
     }
-    println!("{}", i);
+    let _ = i;
 }

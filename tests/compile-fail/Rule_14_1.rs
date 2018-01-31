@@ -1,10 +1,11 @@
-#![deny(clippy)]
-#[deny(warnings)]
+#[forbid(clippy_pedantic)]
+#[forbid(clippy)]
+#[forbid(warnings)]
 
 fn main() {
-    let mut f: f64 = 0f64;
+    let mut f: f64 = 0_f64;
 
     while f < 1.0 {
-        f += 0.001f64;
+        f += 0.001_f64;
     }
 }

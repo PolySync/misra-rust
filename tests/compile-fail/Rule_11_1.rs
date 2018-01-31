@@ -1,6 +1,8 @@
-#![deny(clippy)]
-#[deny(warnings)]
+#[forbid(clippy_pedantic)]
+#[forbid(clippy)]
+#[forbid(warnings)]
 
+/// This function adds one to the input
 fn add_one(x: i32) -> i32 {
     x + 1
 }
