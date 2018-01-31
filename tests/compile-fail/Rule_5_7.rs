@@ -2,22 +2,14 @@
 #[forbid(clippy)]
 #[forbid(warnings)]
 
-#[derive(Debug)]
-struct Deer {
-    a: u16,
-    b: u16,
-}
+/// Struct definition shadows another `struct Deer`.
+struct Deer { }
 
 fn main() {
-    let d: Deer = Deer { a: 1, b: 2 };
+    let _: Deer = Deer { };
     {
-        #[derive(Debug)]
-        struct Deer {
-            c: u16,
-            d: u16,
-        }
-        let e: Deer = Deer { c: 3, d: 4 };
-        println!("{:?}", e);
+        /// Struct definition shadows another `struct Deer`.
+        struct Deer { }
+        let _: Deer = Deer { };
     }
-    println!("{:?}", d);
 }

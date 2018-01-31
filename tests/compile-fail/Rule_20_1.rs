@@ -2,10 +2,13 @@
 #[forbid(clippy)]
 #[forbid(warnings)]
 
+/// This struct definition preceeds the `use` statement.
 struct MyStruct {
+    /// This field is arbitrary.
     a: u32,
 }
 
+/// This function definition preceeds the `use` statement.
 fn func(_: MyStruct) {
     //
 }
