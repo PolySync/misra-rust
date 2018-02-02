@@ -194,7 +194,8 @@ __[See Rule_1_2.rs](./tests/compile-fail/Rule_1_2.rs)__
 
 "There shall be no occurance of undefined or critical unspecified behavior."
 
-_No direct corollary in Rust._
+_Enforceable in Rust (assuming unspecified and undefined can be boiled down_
+_to unsafe blocks)._
 
 __[See Rule_1_3.rs](./tests/compile-fail/Rule_1_3.rs)__
 
@@ -1177,7 +1178,7 @@ __[See Rule_19_1.rs](./tests/compile-fail/Rule_19_1.rs)__
 
 "The _union_ keyword should not be used."
 
-_This is not strictly enforceable in Rust._
+_Enforceable in Rust._
 
 __[See Rule_19_2.rs](./tests/compile-fail/Rule_19_1.rs)__
 

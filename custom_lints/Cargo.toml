@@ -1,0 +1,8 @@
+[package]
+name = "custom_lints"
+version = "0.1.0"
+authors = ["Shea Newton <snewton@polysync.io>"]
+
+[lib]
+name = "custom_lints"
+plugin = true

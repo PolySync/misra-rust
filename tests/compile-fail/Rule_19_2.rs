@@ -5,7 +5,7 @@
 #![forbid(warnings)]
 
 /// The use of the `union` keyword is non-compliant.
-union UnionA { //~ ERROR Non-compliant - use of `union` keyword
+union UnionA { //~ ERROR keyword 'union' disallowed
     /// 'Field 1', distinct type.
     f1: i16,
     /// 'Field 2', distinct type.

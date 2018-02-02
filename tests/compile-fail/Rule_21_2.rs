@@ -4,7 +4,7 @@
 #![forbid(clippy)]
 #![forbid(warnings)]
 
-macro_rules! println {
+macro_rules! println { //~ ERROR Non-compliant - redefinition of macro name
    () => (3;);
 }
 
