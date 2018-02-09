@@ -2,9 +2,6 @@
 #![feature(box_syntax, rustc_private)]
 #![feature(macro_vis_matcher)]
 
-pub mod union_lint;
-pub mod unsafe_lint;
-
 extern crate syntax;
 
 #[macro_use]
