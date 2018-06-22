@@ -1,9 +1,3 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 fn main() {
     let i: i16 = 1;
     if true {

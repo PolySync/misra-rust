@@ -1,12 +1,6 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 fn main() {
     let i = 1;
     match i {
-        _ => {}, //~ ERROR Non-compliant - less that two clauses
+        _ => {} //~ ERROR Non-compliant - less that two clauses
     }
 }

@@ -1,9 +1,3 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 /// This function returnd a value.
 fn func(para1: u16) -> u16 {
     para1

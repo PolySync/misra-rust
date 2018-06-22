@@ -1,9 +1,3 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 const count: i32 = 0;
 
 fn main() {

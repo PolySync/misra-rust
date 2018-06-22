@@ -1,11 +1,4 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 union UnionA {
-//~^ ERROR keyword 'union' disallowed
     f1: i16,
     f2: i32,
 }

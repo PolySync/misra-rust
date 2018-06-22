@@ -4,11 +4,8 @@ version = "0.1.0"
 authors = ["Shea Newton <snewton@polysync.io>"]
 
 [dependencies.clippy]
-version = "=0.0.180"
-
-[dependencies.custom_lints]
-path = "./custom_lints"
+version = "=0.0.209"
 
 [dev-dependencies.compiletest_rs]
-version = "=0.3.5"
+version = "=0.3.11"
 

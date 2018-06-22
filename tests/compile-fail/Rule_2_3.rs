@@ -1,10 +1,5 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
+#[deny(dead_code)]
 
 fn main() {
-    /// This type is never used.
     type LocalType = i16; //~ ERROR type alias is never used: `LocalType`
 }

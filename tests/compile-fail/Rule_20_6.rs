@@ -1,11 +1,7 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 macro_rules! double_it {
-   ($e:expr) => ($e * $e);
+    ($e:expr) => {
+        $e * $e
+    };
 }
 
 fn main() {
@@ -17,4 +13,3 @@ fn main() {
         100
         );
 }
-

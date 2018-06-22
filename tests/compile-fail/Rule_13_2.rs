@@ -1,9 +1,3 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 /// This function has a side effect.
 fn increment(x: &mut u8) -> &mut u8 {
     *x += 1;
@@ -11,7 +5,7 @@ fn increment(x: &mut u8) -> &mut u8 {
 }
 
 /// This function does not have a side effect.
-fn add( x: u8, y: u8 ) -> u8 {
+fn add(x: u8, y: u8) -> u8 {
     x + y
 }
 

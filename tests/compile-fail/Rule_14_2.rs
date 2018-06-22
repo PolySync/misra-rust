@@ -1,11 +1,4 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 fn main() {
-
     let mut bound: u32 = 100;
 
     for i in 0..bound {

@@ -181,7 +181,7 @@
 "The program shall contain no violations of the standard C syntax and
 _constraints_, and shall not exceed the implementations translation limits."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_1_1.rs](./tests/compile-fail/Rule_1_1.rs)__
 
@@ -189,7 +189,7 @@ __[See Rule_1_1.rs](./tests/compile-fail/Rule_1_1.rs)__
 
 "Language extensions should not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_1_2.rs](./tests/compile-fail/Rule_1_2.rs)__
 
@@ -197,8 +197,7 @@ __[See Rule_1_2.rs](./tests/compile-fail/Rule_1_2.rs)__
 
 "There shall be no occurance of undefined or critical unspecified behavior."
 
-_Enforceable in Rust (assuming unspecified and undefined can be boiled down_
-_to unsafe blocks)._
+✔️ `#![deny(unsafe_code)]`
 
 __[See Rule_1_3.rs](./tests/compile-fail/Rule_1_3.rs)__
 
@@ -208,7 +207,7 @@ __[See Rule_1_3.rs](./tests/compile-fail/Rule_1_3.rs)__
 
 "A project shall not contain unreachable code."
 
-_Enforceable in Rust._
+✔️ #[deny(unreachable_code)]
 
 __[See Rule_2_1.rs](./tests/compile-fail/Rule_2_1.rs)__
 
@@ -216,7 +215,7 @@ __[See Rule_2_1.rs](./tests/compile-fail/Rule_2_1.rs)__
 
 "There shall be no _dead code_."
 
-_Enforceable in Rust._
+✔️ #[deny(dead_code)]
 
 __[See Rule_2_2.rs](./tests/compile-fail/Rule_2_2.rs)__
 
@@ -224,7 +223,7 @@ __[See Rule_2_2.rs](./tests/compile-fail/Rule_2_2.rs)__
 
 "A project should not contain unused type declarations."
 
-_Enforceable in Rust._
+✔️ #[deny(dead_code)]
 
 __[See Rule_2_3.rs](./tests/compile-fail/Rule_2_3.rs)__
 
@@ -232,7 +231,7 @@ __[See Rule_2_3.rs](./tests/compile-fail/Rule_2_3.rs)__
 
 "A project should not contain unused tag declarations."
 
-_Enforceable in Rust._
+✔️ #[deny(dead_code)]
 
 __[See Rule_2_4.rs](./tests/compile-fail/Rule_2_4.rs)__
 
@@ -240,7 +239,7 @@ __[See Rule_2_4.rs](./tests/compile-fail/Rule_2_4.rs)__
 
 "A project should not contain unused macro declarations."
 
-_Enforceable in Rust._
+✔️ #[deny(unused_macros)]
 
 __[See Rule_2_5.rs](./tests/compile-fail/Rule_2_5.rs)__
 
@@ -248,7 +247,7 @@ __[See Rule_2_5.rs](./tests/compile-fail/Rule_2_5.rs)__
 
 "A project should not contain unused label declarations."
 
-_Enforceable in Rust._
+✔️ #[deny(unreachable_code)]
 
 __[See Rule_2_6.rs](./tests/compile-fail/Rule_2_6.rs)__
 
@@ -256,7 +255,7 @@ __[See Rule_2_6.rs](./tests/compile-fail/Rule_2_6.rs)__
 
 "There should be no unused parameters in functions."
 
-_Enforceable in Rust._
+✔️ #[deny(unused_variables)]
 
 __[See Rule_2_7.rs](./tests/compile-fail/Rule_2_7.rs)__
 
@@ -266,7 +265,7 @@ __[See Rule_2_7.rs](./tests/compile-fail/Rule_2_7.rs)__
 
 "The character sequences /* and // shall not be used within a comment."
 
-_Enforceable in Rust._
+✖
 
 __[See Rule_3_1.rs](./tests/compile-fail/Rule_3_1.rs)__
 
@@ -274,7 +273,7 @@ __[See Rule_3_1.rs](./tests/compile-fail/Rule_3_1.rs)__
 
 "Line-splicing shall not be used in comments."
 
-_Enforceable in Rust._
+✔️ _Comments cannot be line spliced._
 
 __[See Rule_3_2.rs](./tests/compile-fail/Rule_3_2.rs)__
 
@@ -284,7 +283,7 @@ __[See Rule_3_2.rs](./tests/compile-fail/Rule_3_2.rs)__
 
 "Octal and hexadecimal escape sequences shall be terminated."
 
-_Escape sequences are terminated implicitly, ambuguous escapes are not allowed._
+✔️ _Escape sequences are terminated implicitly, ambuguous escapes are not allowed._
 _All ASCII and byte escapes require exactly 2 hexadecimal digits._
 
 __[See Rule_4_1.rs](./tests/compile-fail/Rule_4_1.rs)__
@@ -293,7 +292,7 @@ __[See Rule_4_1.rs](./tests/compile-fail/Rule_4_1.rs)__
 
 "Trigraphs should not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_4_2.rs](./tests/compile-fail/Rule_4_2.rs)__
 
@@ -303,7 +302,7 @@ __[See Rule_4_2.rs](./tests/compile-fail/Rule_4_2.rs)__
 
 "External identifiers shall be distinct."
 
-_This rule is not strictly enforcable in Rust._
+✖
 
 __[See Rule_5_1.rs](./tests/compile-fail/Rule_5_1.rs)__
 
@@ -312,7 +311,7 @@ __[See Rule_5_1.rs](./tests/compile-fail/Rule_5_1.rs)__
 "Identifiers declared in the same scope and namespace shall be shall be
 distinct."
 
-_This rule is not strictly enforcable in Rust._
+✖
 
 __[See Rule_5_2.rs](./tests/compile-fail/Rule_5_2.rs)__
 
@@ -321,7 +320,7 @@ __[See Rule_5_2.rs](./tests/compile-fail/Rule_5_2.rs)__
 "An identifier declared in an inner scope shall not hide an identifier declared
 in an outer scope."
 
-_Enforceable in Rust._
+✖
 
 __[See Rule_5_3.rs](./tests/compile-fail/Rule_5_3.rs)__
 
@@ -383,7 +382,7 @@ __[See Rule_5_9.rs](./tests/compile-fail/Rule_5_9.rs)__
 
 "Bit-fields shall only be declared with an appropriate type."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_6_1.rs](./tests/compile-fail/Rule_6_1.rs)__
 
@@ -391,7 +390,7 @@ __[See Rule_6_1.rs](./tests/compile-fail/Rule_6_1.rs)__
 
 "Single-bit named fields shall not be of a signed type."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_6_2.rs](./tests/compile-fail/Rule_6_2.rs)__
 
@@ -401,7 +400,7 @@ __[See Rule_6_2.rs](./tests/compile-fail/Rule_6_2.rs)__
 
 "Octal constants shall not be used."
 
-_No direct corollary in Rust. Octal constants are distict from_
+_No applicable corollary in Rust. Octal constants are distict from_
 _decimal constants because they require the `0o` prefix._
 
 __[See Rule_7_1.rs](./tests/compile-fail/Rule_7_1.rs)__
@@ -421,7 +420,7 @@ __[See Rule_7_2.rs](./tests/compile-fail/Rule_7_2.rs)__
 
 "The lowercase 'l' shall not be used in a literal suffix."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_7_3.rs](./tests/compile-fail/Rule_7_3.rs)__
 
@@ -442,7 +441,7 @@ __[See Rule_7_4.rs](./tests/compile-fail/Rule_7_4.rs)__
 
 "Types shall be explicitly specified."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_1.rs](./tests/compile-fail/Rule_8_1.rs)__
 
@@ -450,7 +449,7 @@ __[See Rule_8_1.rs](./tests/compile-fail/Rule_8_1.rs)__
 
 "Function types shall be in prototype form with named parameters."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_2.rs](./tests/compile-fail/Rule_8_2.rs)__
 
@@ -459,7 +458,7 @@ __[See Rule_8_2.rs](./tests/compile-fail/Rule_8_2.rs)__
 "All declarations of an object or function shall use the same names and type
 qualifiers."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_3.rs](./tests/compile-fail/Rule_8_3.rs)__
 
@@ -468,7 +467,7 @@ __[See Rule_8_3.rs](./tests/compile-fail/Rule_8_3.rs)__
 "A compatible declaration shall be visible when an object or function with
 external linkage is defined."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_4.rs](./tests/compile-fail/Rule_8_4.rs)__
 
@@ -477,7 +476,7 @@ __[See Rule_8_4.rs](./tests/compile-fail/Rule_8_4.rs)__
 "An external object or function shall be declared once in one and only one
 file."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_5.rs](./tests/compile-fail/Rule_8_5.rs)__
 
@@ -486,7 +485,7 @@ __[See Rule_8_5.rs](./tests/compile-fail/Rule_8_5.rs)__
 "An identifier with external linkage shall have exactly one external
 definition."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_6.rs](./tests/compile-fail/Rule_8_6.rs)__
 
@@ -495,7 +494,7 @@ __[See Rule_8_6.rs](./tests/compile-fail/Rule_8_6.rs)__
 "Functions and objects should not be defined with external linkage if they
 are referenced in only one translation unit."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_7.rs](./tests/compile-fail/Rule_8_7.rs)__
 
@@ -504,7 +503,7 @@ __[See Rule_8_7.rs](./tests/compile-fail/Rule_8_7.rs)__
 "The static storage class specifier shall be used in all declarations of objects
 and functions that have internal linkage."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_8.rs](./tests/compile-fail/Rule_8_8.rs)__
 
@@ -513,7 +512,7 @@ __[See Rule_8_8.rs](./tests/compile-fail/Rule_8_8.rs)__
 "An object should be defined at block scope if its identifier only appears in
 a single function." (Don't use globals if a local variable will work instead.)
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_9.rs](./tests/compile-fail/Rule_8_9.rs)__
 
@@ -521,7 +520,7 @@ __[See Rule_8_9.rs](./tests/compile-fail/Rule_8_9.rs)__
 
 "An _inline_ function shall be declared with the static storage class."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_10.rs](./tests/compile-fail/Rule_8_10.rs)__
 
@@ -530,7 +529,7 @@ __[See Rule_8_10.rs](./tests/compile-fail/Rule_8_10.rs)__
 "When an array with external linkage is declared, its size should be explicitly
 specified."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_8_11.rs](./tests/compile-fail/Rule_8_11.rs)__
 
@@ -539,7 +538,7 @@ __[See Rule_8_11.rs](./tests/compile-fail/Rule_8_11.rs)__
 "Within an enumerator list, the value of an implicitly specified enmueration
 constnat shall be unique."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_8_12.rs](./tests/compile-fail/Rule_8_12.rs)__
 
@@ -547,7 +546,7 @@ __[See Rule_8_12.rs](./tests/compile-fail/Rule_8_12.rs)__
 
 "A pointer should point to a const-qualified type whenever possible."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_8_13.rs](./tests/compile-fail/Rule_8_13.rs)__
 
@@ -555,7 +554,7 @@ __[See Rule_8_13.rs](./tests/compile-fail/Rule_8_13.rs)__
 
 "The _restrict_ type qualifier shall not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_8_14.rs](./tests/compile-fail/Rule_8_14.rs)__
 
@@ -566,7 +565,7 @@ __[See Rule_8_14.rs](./tests/compile-fail/Rule_8_14.rs)__
 "The value of an object with automatic storage duration shall not be read before
 it is set."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_9_1.rs](./tests/compile-fail/Rule_9_1.rs)__
 
@@ -574,7 +573,7 @@ __[See Rule_9_1.rs](./tests/compile-fail/Rule_9_1.rs)__
 
 "The initializer for an aggregate or union shall be enclosed in braces."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_9_2.rs](./tests/compile-fail/Rule_9_2.rs)__
 
@@ -582,7 +581,7 @@ __[See Rule_9_2.rs](./tests/compile-fail/Rule_9_2.rs)__
 
 "Arrays shall not be partially initialized."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_9_3.rs](./tests/compile-fail/Rule_9_3.rs)__
 
@@ -590,7 +589,7 @@ __[See Rule_9_3.rs](./tests/compile-fail/Rule_9_3.rs)__
 
 "An element of an object shall not be initialized more than once."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_9_4.rs](./tests/compile-fail/Rule_9_4.rs)__
 
@@ -599,7 +598,7 @@ __[See Rule_9_4.rs](./tests/compile-fail/Rule_9_4.rs)__
 "Where designated initializers are used to initialize an array object the size
 of the array shall be specified explicitly."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_9_5.rs](./tests/compile-fail/Rule_9_5.rs)__
 
@@ -619,7 +618,7 @@ __[See Rule_10_1.rs](./tests/compile-fail/Rule_10_1.rs)__
 "Expressions of essentially character type shall not be used inappropriately
 in addition and subtraction operations."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_10_2.rs](./tests/compile-fail/Rule_10_2.rs)__
 
@@ -628,7 +627,7 @@ __[See Rule_10_2.rs](./tests/compile-fail/Rule_10_2.rs)__
 "The value od an experssionshall not be assigned to an object with a narrower
 essential type or of a different essential type category."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_10_3.rs](./tests/compile-fail/Rule_10_3.rs)__
 
@@ -637,7 +636,7 @@ __[See Rule_10_3.rs](./tests/compile-fail/Rule_10_3.rs)__
 "Both operands of an operator in which the usual arithmetic conversions are
 performed shall have the same essential type category."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_10_4.rs](./tests/compile-fail/Rule_10_4.rs)__
 
@@ -646,7 +645,7 @@ __[See Rule_10_4.rs](./tests/compile-fail/Rule_10_4.rs)__
 "The value of an expression should not be cast to an inappropriate essential
 type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_10_5.rs](./tests/compile-fail/Rule_10_5.rs)__
 
@@ -655,7 +654,7 @@ __[See Rule_10_5.rs](./tests/compile-fail/Rule_10_5.rs)__
 "The value of a composite expression shall not be assigned to an object
 with wider essential type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_10_6.rs](./tests/compile-fail/Rule_10_6.rs)__
 
@@ -665,7 +664,7 @@ __[See Rule_10_6.rs](./tests/compile-fail/Rule_10_6.rs)__
 usual arithmetic conversions are performed then the other operand shall not have
 wider essential type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_10_7.rs](./tests/compile-fail/Rule_10_7.rs)__
 
@@ -674,7 +673,7 @@ __[See Rule_10_7.rs](./tests/compile-fail/Rule_10_7.rs)__
 "The value of a composite expression shall not be cast to a different essential
 type category or a wider essential type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_10_8.rs](./tests/compile-fail/Rule_10_8.rs)__
 
@@ -685,7 +684,7 @@ __[See Rule_10_8.rs](./tests/compile-fail/Rule_10_8.rs)__
 "Conversions shall not be performed between a pointer to a function and any
 other type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_11_1.rs](./tests/compile-fail/Rule_11_1.rs)__
 
@@ -694,7 +693,7 @@ __[See Rule_11_1.rs](./tests/compile-fail/Rule_11_1.rs)__
 "Conversions shall not be performed between a pointer to an incomplete type and
 any other type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_11_2.rs](./tests/compile-fail/Rule_11_2.rs)__
 
@@ -706,7 +705,7 @@ to different object type."
 _You may define the `From` trait to facilitate this behavior but by default,_
 _this behavior is not allowed for custom types._
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_11_3.rs](./tests/compile-fail/Rule_11_3.rs)__
 
@@ -715,7 +714,7 @@ __[See Rule_11_3.rs](./tests/compile-fail/Rule_11_3.rs)__
 "A conversion should not be performed between a pointer to object and integer
 type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_11_4.rs](./tests/compile-fail/Rule_11_4.rs)__
 
@@ -724,7 +723,7 @@ __[See Rule_11_4.rs](./tests/compile-fail/Rule_11_4.rs)__
 "A conversion should not be performed from pointer to void into pointer to
 object."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_11_5.rs](./tests/compile-fail/Rule_11_5.rs)__
 
@@ -733,7 +732,7 @@ __[See Rule_11_5.rs](./tests/compile-fail/Rule_11_5.rs)__
 "A conversion should not be performed from pointer to void and an arithmetic
 type."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_11_6.rs](./tests/compile-fail/Rule_11_6.rs)__
 
@@ -742,7 +741,7 @@ __[See Rule_11_6.rs](./tests/compile-fail/Rule_11_6.rs)__
 "A conversion should not be performed from pointer to object and a non-integer
 arithmetic type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_11_7.rs](./tests/compile-fail/Rule_11_7.rs)__
 
@@ -751,7 +750,7 @@ __[See Rule_11_7.rs](./tests/compile-fail/Rule_11_7.rs)__
 "A cast shall not remove any const or volatile qualification from the type
 pointed to by a pointer."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_11_8.rs](./tests/compile-fail/Rule_11_8.rs)__
 
@@ -760,7 +759,7 @@ __[See Rule_11_8.rs](./tests/compile-fail/Rule_11_8.rs)__
 "The macro NULL shall be the only permitted form of integer null pointer
 constant."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_11_9.rs](./tests/compile-fail/Rule_11_9.rs)__
 
@@ -779,7 +778,7 @@ __[See Rule_12_1.rs](./tests/compile-fail/Rule_12_1.rs)__
 "The right hand operand of a shift operator shall lie in the range zero to one
 less than the width in bits of the essential type of the left hand operand."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_12_2.rs](./tests/compile-fail/Rule_12_2.rs)__
 
@@ -787,7 +786,7 @@ __[See Rule_12_2.rs](./tests/compile-fail/Rule_12_2.rs)__
 
 "The comma operator should not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_12_3.rs](./tests/compile-fail/Rule_12_3.rs)__
 
@@ -806,7 +805,7 @@ __[See Rule_12_4.rs](./tests/compile-fail/Rule_12_4.rs)__
 
 "Initializer lists shall not contain persistent side effects."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_13_1.rs](./tests/compile-fail/Rule_13_1.rs)__
 
@@ -825,7 +824,7 @@ __[See Rule_13_2.rs](./tests/compile-fail/Rule_13_2.rs)__
 should have no other potential side effects other than that caused by the
 incremenet or decrement operator."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_13_3.rs](./tests/compile-fail/Rule_13_3.rs)__
 
@@ -852,7 +851,7 @@ __[See Rule_13_5.rs](./tests/compile-fail/Rule_13_5.rs)__
 "The right hand operand of a logical && or || operator shall not contain
 persistent side effects."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_13_6.rs](./tests/compile-fail/Rule_13_6.rs)__
 
@@ -870,7 +869,7 @@ __[See Rule_14_1.rs](./tests/compile-fail/Rule_14_1.rs)__
 
 "A _for_ loop shall be well-formed."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_14_2.rs](./tests/compile-fail/Rule_14_2.rs)__
 
@@ -887,7 +886,7 @@ __[See Rule_14_3.rs](./tests/compile-fail/Rule_14_3.rs)__
 "The controlling expression of an _if_ statement and the controlling expression
 of an iteration-statement shall have essentially Boolean type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_14_4.rs](./tests/compile-fail/Rule_14_4.rs)__
 
@@ -897,7 +896,7 @@ __[See Rule_14_4.rs](./tests/compile-fail/Rule_14_4.rs)__
 
 "The _goto_ statement shall not be used."
 
-_No direct corollary in Rust. Loop labels aren't equivalent._
+_No applicable corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_1.rs](./tests/compile-fail/Rule_15_1.rs)__
 
@@ -906,7 +905,7 @@ __[See Rule_15_1.rs](./tests/compile-fail/Rule_15_1.rs)__
 "The _goto_ statement shall jump to a label declared later in the same
 function."
 
-_No direct corollary in Rust. Loop labels aren't equivalent._
+_No applicable corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_2.rs](./tests/compile-fail/Rule_15_2.rs)__
 
@@ -915,7 +914,7 @@ __[See Rule_15_2.rs](./tests/compile-fail/Rule_15_2.rs)__
 "Any label referenced by a _goto_ statement shall be declared in the same block,
 or in any block enclosing the goto statement."
 
-_No direct corollary in Rust. Loop labels aren't equivalent._
+_No applicable corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_3.rs](./tests/compile-fail/Rule_15_3.rs)__
 
@@ -924,7 +923,7 @@ __[See Rule_15_3.rs](./tests/compile-fail/Rule_15_3.rs)__
 "There should be no more than one _break_ or _goto_ statement used to terminate
 any iteration statement."
 
-_No direct corollary in Rust. Loop labels aren't equivalent._
+_No applicable corollary in Rust. Loop labels aren't equivalent._
 
 __[See Rule_15_4.rs](./tests/compile-fail/Rule_15_4.rs)__
 
@@ -941,7 +940,7 @@ __[See Rule_15_5.rs](./tests/compile-fail/Rule_15_5.rs)__
 "The body of an _iteration-statement_ or _selection-statement_ shall be a
 _compound-statement_."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_15_6.rs](./tests/compile-fail/Rule_15_6.rs)__
 
@@ -969,7 +968,7 @@ __[See Rule_16_1.rs](./tests/compile-fail/Rule_16_1.rs)__
 "A _switch label_ shall only be used when the most closely-enclosing compound
 statement is the body of a _switch_ statement."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_16_2.rs](./tests/compile-fail/Rule_16_2.rs)__
 
@@ -977,7 +976,7 @@ __[See Rule_16_2.rs](./tests/compile-fail/Rule_16_2.rs)__
 
 "An unconditional _break_ statement shall terminate every _switch-clause_."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_16_3.rs](./tests/compile-fail/Rule_16_3.rs)__
 
@@ -985,7 +984,7 @@ __[See Rule_16_3.rs](./tests/compile-fail/Rule_16_3.rs)__
 
 "Every _switch_ statement shall have a _default_ label."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_16_4.rs](./tests/compile-fail/Rule_16_4.rs)__
 
@@ -994,7 +993,7 @@ __[See Rule_16_4.rs](./tests/compile-fail/Rule_16_4.rs)__
 "A _default_ label shall appear as either the first or the last _switch label_
 of a _switch_ statement."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_16_5.rs](./tests/compile-fail/Rule_16_5.rs)__
 
@@ -1010,7 +1009,7 @@ __[See Rule_16_6.rs](./tests/compile-fail/Rule_16_6.rs)__
 
 "A _switch-expression_ shall not have _essentially Boolean type_."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_16_7.rs](./tests/compile-fail/Rule_16_7.rs)__
 
@@ -1020,7 +1019,7 @@ __[See Rule_16_7.rs](./tests/compile-fail/Rule_16_7.rs)__
 
 "The features of `<stdarg.h>` shall not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_17_1.rs](./tests/compile-fail/Rule_17_1.rs)__
 
@@ -1036,7 +1035,7 @@ __[See Rule_17_2.rs](./tests/compile-fail/Rule_17_2.rs)__
 
 "A function shall not be declared implicitly."
 
-_No direct corollary in Rust. There isn't really the same concept_
+_No applicable corollary in Rust. There isn't really the same concept_
 _of function prototypes._
 
 __[See Rule_17_3.rs](./tests/compile-fail/Rule_17_3.rs)__
@@ -1046,7 +1045,7 @@ __[See Rule_17_3.rs](./tests/compile-fail/Rule_17_3.rs)__
 "All exit paths from a function with non-_void_ return type shall have an
 explicit return statement with an expression."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_17_4.rs](./tests/compile-fail/Rule_17_4.rs)__
 
@@ -1055,7 +1054,7 @@ __[See Rule_17_4.rs](./tests/compile-fail/Rule_17_4.rs)__
 "The function argument corresponding to a parameter declared to have an array
 type shall have an appropriate number of elements."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_17_5.rs](./tests/compile-fail/Rule_17_5.rs)__
 
@@ -1064,7 +1063,7 @@ __[See Rule_17_5.rs](./tests/compile-fail/Rule_17_5.rs)__
 "The declaration of an array parameter shall not contain the _static_ keyword
 between the __[]__."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_17_6.rs](./tests/compile-fail/Rule_17_6.rs)__
 
@@ -1111,7 +1110,7 @@ __[See Rule_18_2.rs](./tests/compile-fail/Rule_18_2.rs)__
 "The relational operators _>_, _>=_, _<_ and _<=_ shall not be applied to
 objects of pointer type except where they point to the same object."
 
-_No direct corollary in Rust. Rust's 'auto' dereference behavior_
+_No applicable corollary in Rust. Rust's 'auto' dereference behavior_
 _means those operations aren't applied to the pointers or references._
 
 __[See Rule_18_3.rs](./tests/compile-fail/Rule_18_3.rs)__
@@ -1121,25 +1120,15 @@ __[See Rule_18_3.rs](./tests/compile-fail/Rule_18_3.rs)__
 "The _+_, _-_, _+=_ and _-=_ operators should not be applied to an expression of
 pointer type."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_18_4.rs](./tests/compile-fail/Rule_18_4.rs)__
 
 ### Rule 18.5
 
-"Declarations should contain no more thaan two levels of pointer nesting."
+"Declarations should contain no more than two levels of pointer nesting."
 
-_No direct corollary in Rust. Rust's 'auto' dereference behavior_
-_manages the dereferences so as not to "seriously impair the ability to_
-_understand"._
-
-  These things are the same:
-  ```rust
-  f.foo();
-  (&f).foo();
-  (&&f).foo();
-  (&&&&&&&&f).foo();
-  ```
+✖️
 __[See Rule_18_5.rs](./tests/compile-fail/Rule_18_5.rs)__
 
 ### Rule 18.6
@@ -1147,7 +1136,7 @@ __[See Rule_18_5.rs](./tests/compile-fail/Rule_18_5.rs)__
 "The address of an object with automatic storage shall not be copied to another
 object that persists after the first object has ceased to exist."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_18_6.rs](./tests/compile-fail/Rule_18_6.rs)__
 
@@ -1155,7 +1144,7 @@ __[See Rule_18_6.rs](./tests/compile-fail/Rule_18_6.rs)__
 
 "Flexible array members shall not be declared."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_18_7.rs](./tests/compile-fail/Rule_18_7.rs)__
 
@@ -1163,7 +1152,7 @@ __[See Rule_18_7.rs](./tests/compile-fail/Rule_18_7.rs)__
 
 "Variable-length array types shall not be used."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_18_8.rs](./tests/compile-fail/Rule_18_8.rs)__
 
@@ -1173,7 +1162,7 @@ __[See Rule_18_8.rs](./tests/compile-fail/Rule_18_8.rs)__
 
 "An object shall not be assigned or copied to an overlapping object/"
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_19_1.rs](./tests/compile-fail/Rule_19_1.rs)__
 
@@ -1181,7 +1170,7 @@ __[See Rule_19_1.rs](./tests/compile-fail/Rule_19_1.rs)__
 
 "The _union_ keyword should not be used."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_19_2.rs](./tests/compile-fail/Rule_19_1.rs)__
 
@@ -1210,7 +1199,7 @@ __[See Rule_20_2.rs](./tests/compile-fail/Rule_20_2.rs)__
 "The _#include_ directive shall be followed by either a `<filename>` or
 "filname" sequence."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_20_3.rs](./tests/compile-fail/Rule_20_3.rs)__
 
@@ -1218,7 +1207,7 @@ __[See Rule_20_3.rs](./tests/compile-fail/Rule_20_3.rs)__
 
 "A macro shall not be defined with the same name as a keyword"
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_20_4.rs](./tests/compile-fail/Rule_20_4.rs)__
 
@@ -1226,7 +1215,7 @@ __[See Rule_20_4.rs](./tests/compile-fail/Rule_20_4.rs)__
 
 "_#undef_ should not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_20_5.rs](./tests/compile-fail/Rule_20_5.rs)__
 
@@ -1235,7 +1224,7 @@ __[See Rule_20_5.rs](./tests/compile-fail/Rule_20_5.rs)__
 "Tokens that look like a preprocessing directive shall not occur within a macro
 argument."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_20_6.rs](./tests/compile-fail/Rule_20_6.rs)__
 
@@ -1244,7 +1233,7 @@ __[See Rule_20_6.rs](./tests/compile-fail/Rule_20_6.rs)__
 "Expressions resulting from the expansion of macro parameters shall be enclosed
 in parentheses."
 
-_Enforceable in Rust._
+✔️
 
 __[See Rule_20_7.rs](./tests/compile-fail/Rule_20_7.rs)__
 
@@ -1253,7 +1242,7 @@ __[See Rule_20_7.rs](./tests/compile-fail/Rule_20_7.rs)__
 "The controlling expression of a _#if_ or _#elif_ preprocessing directive shall
 evaluate to 0 or 1"
 
-_No direct corollary in Rust. The cfg! macro allows for more_
+_No applicable corollary in Rust. The cfg! macro allows for more_
 _sophistication without the undefined behavior._
 
 __[See Rule_20_8.rs](./tests/compile-fail/Rule_20_8.rs)__
@@ -1263,7 +1252,7 @@ __[See Rule_20_8.rs](./tests/compile-fail/Rule_20_8.rs)__
 "All identifiers used in the controlling expression of _#if_ or _#elif_
 preprocessing directives shall be _#define_'d before evaluation."
 
-_No direct corollary in Rust. The cfg! macro allows for more_
+_No applicable corollary in Rust. The cfg! macro allows for more_
 _sophistication without the undefined behavior._
 
 __[See Rule_20_9.rs](./tests/compile-fail/Rule_20_9.rs)__
@@ -1272,7 +1261,7 @@ __[See Rule_20_9.rs](./tests/compile-fail/Rule_20_9.rs)__
 
 "The _#_ and _##_ preprocessor should not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_20_10.rs](./tests/compile-fail/Rule_20_10.rs)__
 
@@ -1281,7 +1270,7 @@ __[See Rule_20_10.rs](./tests/compile-fail/Rule_20_10.rs)__
 "A macro paramete immediately following a _#_ operator shall not immediately
 be followed by a _##_ operator."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_20_11.rs](./tests/compile-fail/Rule_20_11.rs)__
 
@@ -1291,7 +1280,7 @@ __[See Rule_20_11.rs](./tests/compile-fail/Rule_20_11.rs)__
 itself subject to further macro replacement, shall only be used as an operand
 to these parameters."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_20_12.rs](./tests/compile-fail/Rule_20_12.rs)__
 
@@ -1299,7 +1288,7 @@ __[See Rule_20_12.rs](./tests/compile-fail/Rule_20_12.rs)__
 
 "A line whose first token is _#_ shall be a valid preprocessing directive."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_20_13.rs](./tests/compile-fail/Rule_20_13.rs)__
 
@@ -1309,7 +1298,7 @@ __[See Rule_20_13.rs](./tests/compile-fail/Rule_20_13.rs)__
 same file as the _#if_, _#ifdef_ or _#ifndef_ directive to which they are
 related."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_20_14.rs](./tests/compile-fail/Rule_20_14.rs)__
 
@@ -1337,7 +1326,7 @@ __[See Rule_21_2.rs](./tests/compile-fail/Rule_21_2.rs)__
 "The memory allocation and deallocatin functions of _<stdlib.h>_ shall not be
 used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_21_3.rs](./tests/compile-fail/Rule_21_3.rs)__
 
@@ -1345,7 +1334,7 @@ __[See Rule_21_3.rs](./tests/compile-fail/Rule_21_3.rs)__
 
 "The standard _header file <setjmp.h>_ shall not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_21_4.rs](./tests/compile-fail/Rule_21_4.rs)__
 
@@ -1353,7 +1342,7 @@ __[See Rule_21_4.rs](./tests/compile-fail/Rule_21_4.rs)__
 
 "The standard _header file <signal.h>_ shall not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_21_5.rs](./tests/compile-fail/Rule_21_5.rs)__
 
@@ -1372,7 +1361,7 @@ __[See Rule_21_6.rs](./tests/compile-fail/Rule_21_6.rs)__
 used."
 
 _If the implementation of `From` for those types were comprable this is_
-_not strictly enforceable in Rust. Otherise there is no direct corollary._
+_not strictly enforceable in Rust. Otherise there is No applicable corollary._
 
 __[See Rule_21_7.rs](./tests/compile-fail/Rule_21_7.rs)__
 
@@ -1382,7 +1371,7 @@ __[See Rule_21_7.rs](./tests/compile-fail/Rule_21_7.rs)__
 shall not be used."
 
 _If the corresponding functionality of those functions were comprable this is_
-_not strictly enforceable in Rust. Otherise there is no direct corollary._
+_not strictly enforceable in Rust. Otherise there is No applicable corollary._
 
 __[See Rule_21_8.rs](./tests/compile-fail/Rule_21_8.rs)__
 
@@ -1392,7 +1381,7 @@ __[See Rule_21_8.rs](./tests/compile-fail/Rule_21_8.rs)__
 shall not be used."
 
 _If the corresponding functionality of those functions were comprable this is_
-_not strictly enforceable in Rust. Otherise there is no direct corollary._
+_not strictly enforceable in Rust. Otherise there is No applicable corollary._
 
 __[See Rule_21_9.rs](./tests/compile-fail/Rule_21_9.rs)__
 
@@ -1401,7 +1390,7 @@ __[See Rule_21_9.rs](./tests/compile-fail/Rule_21_9.rs)__
 "The Standard Library time and date functions shall not be used."
 
 _If the corresponding functionality was comprable this is_
-_not strictly enforceable in Rust. Otherise there is no direct corollary._
+_not strictly enforceable in Rust. Otherise there is No applicable corollary._
 
 __[See Rule_21_10.rs](./tests/compile-fail/Rule_21_10.rs)__
 
@@ -1409,7 +1398,7 @@ __[See Rule_21_10.rs](./tests/compile-fail/Rule_21_10.rs)__
 
 "The standard _header file _<tgmath.h>_ shall not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_21_11.rs](./tests/compile-fail/Rule_21_11.rs)__
 
@@ -1417,7 +1406,7 @@ __[See Rule_21_11.rs](./tests/compile-fail/Rule_21_11.rs)__
 
 "The exception handling features of _<fenv.h>_ should not be used."
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_21_12.rs](./tests/compile-fail/Rule_21_12.rs)__
 
@@ -1429,7 +1418,7 @@ __[See Rule_21_12.rs](./tests/compile-fail/Rule_21_12.rs)__
 shall be explicitly released."
 
 _If the `drop` was comprable this is_
-_not strictly enforceable in Rust. Otherise there is no direct corollary._
+_not strictly enforceable in Rust. Otherise there is No applicable corollary._
 
 __[See Rule_22_1.rs](./tests/compile-fail/Rule_22_1.rs)__
 
@@ -1438,7 +1427,7 @@ __[See Rule_22_1.rs](./tests/compile-fail/Rule_22_1.rs)__
 "A block of memory shall only be freed if it was allocated by means of a
 Standard Library function"
 
-_No direct corollary in Rust._
+✔️ _N/A_
 
 __[See Rule_22_2.rs](./tests/compile-fail/Rule_22_2.rs)__
 

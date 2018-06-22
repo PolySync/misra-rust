@@ -1,9 +1,3 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 fn func() -> &'static i8 {
     let local_auto: i8 = 0;
     &local_auto

@@ -1,13 +1,10 @@
-//! Rule
+#[deny(unused_macros)]
 
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
-macro_rules! data { //~ ERROR unused macro definition
-   () => (3;);
+macro_rules! data {
+    //~ ERROR unused macro definition
+    () => {
+        3;
+    };
 }
 
-fn main() {
-    //
-}
+fn main() {}

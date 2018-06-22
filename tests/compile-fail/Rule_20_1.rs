@@ -1,9 +1,3 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
-
 /// This struct definition preceeds the `use` statement.
 struct MyStruct {
     /// This field is arbitrary.
@@ -25,6 +19,6 @@ impl fmt::Display for MyStruct {
 }
 
 fn main() {
-    let s = MyStruct{ a: 10 };
+    let s = MyStruct { a: 10 };
     func(s);
 }

@@ -1,17 +1,9 @@
-//! Rule
-
-#![forbid(clippy_pedantic)]
-#![forbid(clippy)]
-#![forbid(warnings)]
+#[deny(dead_code)]
 
 fn main() {
-    /// This enum is never used.
-    enum State { //~ ERROR enum is never used: `State`
-        /// Never used.
+    enum State {
+        //~ ERROR enum is never used: `State`
         SInit,
-        /// Never used.
         SRun,
-        /// Never used.
         SSleep,
-    };
-}
+    };}
