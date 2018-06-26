@@ -1,6 +1,6 @@
 fn main() {
-    let u16_a: u16 = 1;
-    let u16_b: u16 = 2;
-    let _: u32 = u16_a + u16_b;
+    let x: u16 = 1;
+    let y: u16 = 2;
+    let z: u32 = x + y;
     //~^ ERROR mismatched types
 }

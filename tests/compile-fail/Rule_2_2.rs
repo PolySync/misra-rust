@@ -1,5 +1,5 @@
 #[deny(dead_code)]
 
-fn dead_code() {}
+const DEAD_CODE: i32 = 0;
 
 fn main() {}

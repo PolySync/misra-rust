@@ -1,6 +1,7 @@
+#[allow(unused_variables)]
+
 fn main() {
+    let compliant_unsigned: u32 = 1u32;
     let unsigned: u32 = 1;
-    let signed: i32 = 2;
-    let _ = signed + unsigned; //~ ERROR mismatched types
-                               //~^ ERROR the trait bound `i32: std::ops::Add<u32>` is not satisfied
+    //~^ ERROR Non-compliant - suffix specifying unsigned type required on integer constants.
 }

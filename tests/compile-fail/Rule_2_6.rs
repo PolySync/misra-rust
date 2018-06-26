@@ -5,9 +5,8 @@ fn main() {
         'inner: loop {
             break 'outer;
         }
-        'label1: loop {
+        'unreachable: loop {
             //~ ERROR unreachable statement
-            println!("This label is unused!");
         }
         break;
     }

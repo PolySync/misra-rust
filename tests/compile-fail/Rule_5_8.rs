@@ -1,7 +1,6 @@
-const count: i32 = 0;
+pub static count: i32 = 1;
 
 fn main() {
     let count: i32 = 1;
-    //~^ ERROR refutable pattern in local binding: `_` not covered
-    let _ = count;
+    //~^ ERROR cannot be named the same as a static
 }

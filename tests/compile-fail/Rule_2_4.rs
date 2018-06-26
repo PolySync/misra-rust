@@ -6,4 +6,5 @@ fn main() {
         SInit,
         SRun,
         SSleep,
-    };}
+    };
+}

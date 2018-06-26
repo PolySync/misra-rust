@@ -9,8 +9,6 @@ fn run_mode(mode: &'static str) {
     config.src_base = PathBuf::from(format!("tests/{}", mode));
     config.link_deps(); // Populate config.target_rustcflags with dependencies on the path
     config.clean_rmeta(); // If your tests import the parent crate, this helps with E0464
-    config.target_rustcflags =
-        Some("-D unused -D warnings -L ./target/debug/deps/ -Z extra-plugins=clippy".to_string());
     compiletest::run_tests(&config);
 }
 

@@ -1,6 +1,4 @@
-static arr: [i32] = []; //~ ERROR mismatched types
-                        //~^ ERROR the trait bound `[i32]: std::marker::Sized` is not satisfied
+pub const arr: [i32] = []; //~ ERROR doesn't have a size known at compile-time
+//~^ ERROR expected slice, found array of 0 elements
 
-fn main() {
-    //
-}
+fn main() {}

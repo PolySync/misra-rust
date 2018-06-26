@@ -1,12 +1,10 @@
-/// Struct definition shadows another `struct Deer`.
 struct Deer {}
 
 fn main() {
     let _: Deer = Deer {};
     {
-        /// Struct definition shadows another `struct Deer`.
         struct Deer {}
-        //~^ ERROR Non-compliant - struct name shadows struct Deer
+        //~^ ERROR Non-compliant - struct name shadows struct Deer in global scope
         let _: Deer = Deer {};
     }
 }

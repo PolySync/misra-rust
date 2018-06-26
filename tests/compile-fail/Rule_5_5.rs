@@ -1,3 +1,5 @@
+#[allow(unused_variables, unused_macros)]
+
 macro_rules! val {
     () => {
         3;
@@ -5,7 +7,5 @@ macro_rules! val {
 }
 
 fn main() {
-    let val: i16 = 1;
-    let _ = val;
-    let _ = val!();
+    let val!: i16 = 1; //~ ERROR expected open delimiter
 }
