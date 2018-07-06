@@ -1,2 +1,2 @@
-"N/A"
-//~^ ERROR expected item, found `"N/A"`
+pub const LIBRARY_GLOBAL: u32 = 0;
+//~^ ERROR Non-compliant - public but not used

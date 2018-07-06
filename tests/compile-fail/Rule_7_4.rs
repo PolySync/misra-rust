@@ -1,4 +1,4 @@
 fn main() {
-    let mut literal = "string literal";
+    let mut _l = "string literal";
     //~^ ERROR Non-compliant - string literal not const-qualified.
 }

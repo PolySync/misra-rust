@@ -2,7 +2,7 @@ fn main() {
     let i = true;
 
     match i as bool {
-        //~^ ERROR you seem to be trying to match on a boolean expression
+        //~^ ERROR Non-compliant - match on a boolean expression
         false => {
             let _ = 1;
         }

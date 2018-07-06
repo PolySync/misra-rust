@@ -4,6 +4,6 @@ fn add_one(x: i32) -> i32 {
 }
 
 fn main() {
-    let _: u32 = 1 as add_one;
-    // ERROR~^ expected type, found function `add_one`
+    let _x: u32 = 1 as add_one;
+    //~^ ERROR expected type, found function `add_one`
 }

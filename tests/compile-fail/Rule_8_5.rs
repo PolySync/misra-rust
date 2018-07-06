@@ -1,5 +1,3 @@
-include!("../../src/main.rs");
-
 pub const PUBLIC_ZERO: u64 = 0u64;
-//~^ ERROR `PUBLIC_ZERO` redefined here
-
+pub const PUBLIC_ZERO: u64 = 0u64;
+//~^ ERROR the name `PUBLIC_ZERO` is defined multiple times

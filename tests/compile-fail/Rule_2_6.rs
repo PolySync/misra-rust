@@ -1,3 +1,4 @@
+#[allow(unused_labels)]
 #[deny(unreachable_code)]
 
 fn main() {
@@ -6,8 +7,8 @@ fn main() {
             break 'outer;
         }
         'unreachable: loop {
-            //~ ERROR unreachable statement
+            //~^ ERROR unreachable expression
+            break 'outer;
         }
-        break;
     }
 }

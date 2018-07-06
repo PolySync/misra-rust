@@ -1,4 +1,4 @@
-pub const arr: [i32] = []; //~ ERROR doesn't have a size known at compile-time
-//~^ ERROR expected slice, found array of 0 elements
+pub const arr: [i32] = []; //~ ERROR the size for value values of type `[i32]` cannot be known at compilation time
+                           //~^ ERROR mismatched types
 
 fn main() {}

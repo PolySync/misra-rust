@@ -1,7 +1,7 @@
 #[deny(unused_macros)]
 
 macro_rules! data {
-    //~ ERROR unused macro definition
+    //~^ ERROR unused macro definition
     () => {
         3;
     };

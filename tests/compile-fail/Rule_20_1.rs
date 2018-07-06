@@ -1,13 +1,8 @@
-/// This struct definition preceeds the `use` statement.
 struct MyStruct {
-    /// This field is arbitrary.
     a: u32,
 }
 
-/// This function definition preceeds the `use` statement.
-fn func(_: MyStruct) {
-    //
-}
+fn func(_: MyStruct) {}
 
 use std::fmt;
 //~ ERROR Non-compliant - `include` directive preceeded by something other than macros or comments
