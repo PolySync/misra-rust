@@ -5,7 +5,7 @@
 The MISRA-Rust project represents an investigation into what adhering to each MISRA-C rule looks
 like in Rust. The intention is to decipher how much we "get for free" from the Rust compiler.
 
-Because of the proprietary nature of the MISRA-C specificaion, the description of each rule has
+Because of the proprietary nature of the MISRA-C specification, the description of each rule has
 been omitted.
 
 ## Usage
