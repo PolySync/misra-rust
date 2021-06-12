@@ -358,7 +358,7 @@ __[See Rule_7_3.rs](./tests/compile-fail/Rule_7_3.rs)__
 
 ### Rule 7.4
 
-✖ **Not enforceable by default**
+✔️ _No equivalent._
 
 __[See Rule_7_4.rs](./tests/compile-fail/Rule_7_4.rs)__
 

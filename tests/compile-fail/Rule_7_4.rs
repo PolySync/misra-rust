@@ -1,4 +1,2 @@
-fn main() {
-    let mut _l = "string literal";
-    //~^ ERROR Non-compliant - string literal not const-qualified.
-}
+"N/A"
+//~^ ERROR expected item, found `"N/A"`
