@@ -1,6 +1,5 @@
 fn return_v1(depth: u64) -> u64 {
-    if depth == 2 {
-        //~^ ERROR if may be missing an else clause
+    if depth == 2 { //~ ERROR `if` may be missing an `else` clause [E0317]
         return depth;
     }
 }

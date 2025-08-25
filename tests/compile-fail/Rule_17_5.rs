@@ -1,3 +1,4 @@
+#[allow(unused_variables)]
 fn fn1(data: [u32; 3]) {
     //
 }

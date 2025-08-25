@@ -4,6 +4,5 @@ macro_rules! while { //~ ERROR expected identifier, found keyword `while`
 }
 
 fn main() {
-    let _ = while!();
-    //~^ ERROR expected one of `.`, `?`, `{`, or an operator, found `;`
+    let _ = while!(); //~ ERROR expected `{`, found `;`
 }

@@ -1,6 +1,8 @@
+#![allow(unused_variables)]
+#[allow(dead_code)]
+
 pub static count: i32 = 1;
 
 fn main() {
-    let count: i32 = 1;
-    //~^ ERROR let bindings cannot shadow statics
+    let count: i32 = 1; //~ ERROR let bindings cannot shadow statics [E0530]
 }
