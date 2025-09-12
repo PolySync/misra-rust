@@ -2,8 +2,8 @@
 
 fn main() {
     enum State {
-        //~^ ERROR enum is never used: `State`
+        //~^ ERROR enum `State` is never used [dead_code]
         SInit,
         SRun,
         SSleep,
-    };}
+    }}
